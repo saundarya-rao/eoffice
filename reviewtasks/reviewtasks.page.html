@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <!-- <ion-button>
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>-->
+    </ion-buttons>
+    <ion-title>Review Tasks</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen>
+  <ion-refresher slot="fixed" (ionRefresh)="refresh($event)">
+    <ion-refresher-content
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-list>
+    <ion-item color="light" *ngFor="let p of this.local.getreviewtasks();index as i;" button (click)="infowarning(p)">
+      <ion-avatar slot="start">
+        <img src={{p.imageUrl}}>
+      </ion-avatar>
+      <ion-label>
+        <ion-text>
+          <h2><b>{{p.displayName}}</b> </h2>
+        <p> {{p.task}}</p>
+        </ion-text>
+        
+      </ion-label>
+      <ion-badge color="light">{{p.date}}</ion-badge>
+
+    </ion-item>
+  </ion-list>
+  </ion-content>

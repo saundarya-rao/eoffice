@@ -1,0 +1,58 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+       <!--<ion-button>
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>-->
+    </ion-buttons>
+    <ion-title>Todo list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-input #taskInput type="text" placeholder="Enter Your Task" [(ngModel)]="taskName">
+    </ion-input>
+    <ion-button slot="end" (click)="addTask()">
+      <ion-icon name="add-circle" slot="start"></ion-icon>Add Task
+    </ion-button>
+  </ion-item>
+  
+  
+  <ion-list class="ion-padding">
+    <ion-item *ngFor="let p of todo ;index as i ">
+
+      <div *ngIf="!p.state">
+        <div (click)="strip(i)">
+
+      <p ><s>
+
+        {{ p.task }}
+      </s></p>
+    </div>
+
+      </div>
+      <div *ngIf="p.state">
+        <div (click)="strip(i)">
+
+      <p tappable (onclick)="strip(i)">
+
+      {{ p.task }}
+      </p>
+    </div>
+
+      </div>
+      <ion-buttons slot="end">
+        <ion-button (click)="updateTask(i)" color="primary">
+          <ion-icon name="create" slot="start"></ion-icon>
+        </ion-button>
+        <ion-button (click)="deleteTask(i)" color="primary">
+          <ion-icon name="trash" slot="start"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </ion-item>
+  </ion-list>
+</ion-content>
