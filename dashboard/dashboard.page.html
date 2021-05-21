@@ -1,0 +1,65 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      
+    </ion-buttons>
+    <ion-title>dashboard</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<br/>
+  <h2>Enter code for connecting to Colleague</h2>
+<br/>
+
+
+<ion-content padding>
+  
+
+  
+  <ion-item>
+    <ion-input type="text" placeholder="Enter code" [(ngModel)]="userId">
+    </ion-input>
+  </ion-item>
+  <ion-button icon-left (click)="showuser()"><ion-icon name="barcode"></ion-icon>Connect </ion-button>
+  
+ 
+    <!--input:{{input}}<br/>
+    userId:{{userId}}<br/>
+    myuserid:{{myuserid}}<br/>
+    people:{{people}}<br/>
+    rahul:<div *ngIf="people"></div><br/>
+    people:
+    <div *ngIf="people">
+      <div *ngFor="let p of people of people;index as i" >
+      {{p[i].displayName}}+{{p[i].email}}+{{p[i].userId}}
+      </div>
+    </div><br/>
+    people2:<div *ngIf="people2">
+      <div *ngFor="let p of people of people2;index as i" >
+
+      {{p[i].displayName}}
+      </div>
+    </div>
+    <br/>
+ 
+
+  <div *ngIf="myuserid">     //If "product" exists
+
+  {{myuserid}}
+  </div>
+  <div *ngIf="!myuserid">     //If "product" exists
+
+    can not display my user id
+    </div>
+  -->
+ 
+  
+
+
+</ion-content>
+
