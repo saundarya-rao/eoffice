@@ -1,0 +1,107 @@
+
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button>
+      </ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="share-social-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>People</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!--<div *ngIf="oneboolen">
+  {{getdataofuserpeople()}}
+  </div>
+  <div *ngIf="!people">
+    {{getdataofuserpeople()}}
+
+    can not access people
+  </div>-->
+
+    
+    <ion-list>
+    <div *ngFor="let p of this.local.getpeople();index as i">
+    <ion-item button (click)="sendtask(i)">
+      <ion-avatar slot="start">
+        <img src={{p.imageUrl}}>
+      </ion-avatar>
+      <ion-label>
+        
+        <h2>{{p.displayName}}</h2>
+      </ion-label>
+    
+    </ion-item>
+    </div>
+  </ion-list>
+  
+    <!--<ion-list>
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/female.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Hauva</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/male.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Ram</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/female.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Saundarya</h2>
+      </ion-label>
+    </ion-item>
+  
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/male.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Parth</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/female.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>vaishnavi</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/male.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Onkar</h2>
+      </ion-label>
+    </ion-item>
+
+    <ion-item button (click)="sendtask()">
+      <ion-avatar slot="start">
+        <img src="assets/male.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>Nihar </h2>
+      </ion-label>
+    </ion-item>
+  </ion-list>-->
+</ion-content>
